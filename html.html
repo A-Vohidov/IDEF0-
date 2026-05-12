@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDEF0 Диаграммы</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #f4f4f4;
+    color: #111;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.diagram {
+    background: white;
+    padding: 30px;
+    margin-bottom: 60px;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+svg {
+    width: 100%;
+    height: auto;
+    border: 1px solid #999;
+    background: #fff;
+}
+
+.block {
+    fill: #e8eefc;
+    stroke: #000;
+    stroke-width: 2;
+}
+
+.arrow {
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
+    marker-end: url(#arrow);
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.small {
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<h1>ПОЛНАЯ IDEF0-МОДЕЛЬ</h1>
+<h2>Информационная система продажи и заказа услуг</h2>
+
+<div class="diagram">
+<h2>A0 — Контекстная диаграмма</h2>
+
+<svg viewBox="0 0 1400 700">
+
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+<path d="M0,0 L0,6 L9,3 z" fill="black"></path>
+</marker>
+</defs>
+
+<rect x="500" y="250" width="400" height="180" class="block"></rect>
+<text x="700" y="315" text-anchor="middle" class="label">A0</text>
+<text x="700" y="350" text-anchor="middle" class="label">Информационная система</text>
+<text x="700" y="380" text-anchor="middle" class="label">продажи и заказа услуг</text>
+
+<line x1="150" y1="300" x2="500" y2="300" class="arrow"></line>
+<line x1="150" y1="340" x2="500" y2="340" class="arrow"></line>
+<line x1="150" y1="380" x2="500" y2="380" class="arrow"></line>
+
+<text x="60" y="300" class="small">Данные клиентов</text>
+<text x="60" y="340" class="small">Заказы и услуги</text>
+<text x="60" y="380" class="small">Платёжные данные</text>
+
+<line x1="650" y1="100" x2="650" y2="250" class="arrow"></line>
+<line x1="750" y1="100" x2="750" y2="250" class="arrow"></line>
+
+<text x="530" y="70" class="small">Политика безопасности</text>
+<text x="700" y="70" class="small">Бизнес-правила платформы</text>
+
+<line x1="900" y1="300" x2="1250" y2="300" class="arrow"></line>
+<line x1="900" y1="350" x2="1250" y2="350" class="arrow"></line>
+<line x1="900" y1="400" x2="1250" y2="400" class="arrow"></line>
+
+<text x="1270" y="300" class="small">Выполненные заказы</text>
+<text x="1270" y="350" class="small">Рейтинги и отзывы</text>
+<text x="1270" y="400" class="small">Финансовые операции</text>
+
+<line x1="620" y1="600" x2="620" y2="430" class="arrow"></line>
+<line x1="780" y1="600" x2="780" y2="430" class="arrow"></line>
+
+<text x="450" y="640" class="small">Web / Mobile приложение</text>
+<text x="720" y="640" class="small">База данных / API / Payment Gateway</text>
+
+</svg>
+</div>
+
+<div class="diagram">
+<h2>Декомпозиция A0</h2>
+
+<svg viewBox="0 0 1600 900">
+
+<defs>
+<marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+<path d="M0,0 L0,6 L9,3 z" fill="black"></path>
+</marker>
+</defs>
+
+<rect x="120" y="300" width="220" height="120" class="block"></rect>
+<text x="230" y="350" text-anchor="middle" class="label">A1</text>
+<text x="230" y="380" text-anchor="middle" class="small">Управление пользователями</text>
+
+<rect x="430" y="300" width="220" height="120" class="block"></rect>
+<text x="540" y="350" text-anchor="middle" class="label">A2</text>
+<text x="540" y="380" text-anchor="middle" class="small">Управление заказами</text>
+
+<rect x="740" y="300" width="220" height="120" class="block"></rect>
+<text x="850" y="350" text-anchor="middle" class="label">A3</text>
+<text x="850" y="380" text-anchor="middle" class="small">Управление услугами</text>
+
+<rect x="1050" y="300" width="220" height="120" class="block"></rect>
+<text x="1160" y="350" text-anchor="middle" class="label">A4</text>
+<text x="1160" y="380" text-anchor="middle" class="small">Коммуникация</text>
+
+<rect x="430" y="550" width="220" height="120" class="block"></rect>
+<text x="540" y="600" text-anchor="middle" class="label">A5</text>
+<text x="540" y="630" text-anchor="middle" class="small">Платёжная система</text>
+
+<rect x="900" y="550" width="260" height="120" class="block"></rect>
+<text x="1030" y="600" text-anchor="middle" class="label">A6</text>
+<text x="1030" y="630" text-anchor="middle" class="small">Администрирование и безопасность</text>
+
+<line x1="340" y1="360" x2="430" y2="360" class="arrow" marker-end="url(#arrow2)"></line>
+<line x1="650" y1="360" x2="740" y2="360" class="arrow" marker-end="url(#arrow2)"></line>
+<line x1="960" y1="360" x2="1050" y2="360" class="arrow" marker-end="url(#arrow2)"></line>
+
+<line x1="540" y1="420" x2="540" y2="550" class="arrow" marker-end="url(#arrow2)"></line>
+
+<line x1="650" y1="610" x2="900" y2="610" class="arrow" marker-end="url(#arrow2)"></line>
+
+<text x="365" y="345" class="small">Авторизация</text>
+<text x="680" y="345" class="small">Запросы услуг</text>
+<text x="985" y="345" class="small">Сообщения</text>
+<text x="560" y="500" class="small">Транзакции</text>
+<text x="760" y="590" class="small">Логи и споры</text>
+
+<line x1="750" y1="120" x2="750" y2="300" class="arrow"></line>
+<text x="620" y="90" class="small">Политики безопасности</text>
+
+<line x1="300" y1="850" x2="300" y2="420" class="arrow"></line>
+<text x="180" y="870" class="small">Frontend / Backend / Database</text>
+
+</svg>
+</div>
+
+<div class="diagram">
+<h2>Декомпозиция A2 — Управление заказами</h2>
+
+<svg viewBox="0 0 1700 850">
+
+<rect x="120" y="300" width="220" height="120" class="block"></rect>
+<text x="230" y="350" text-anchor="middle" class="label">A21</text>
+<text x="230" y="380" text-anchor="middle" class="small">Создание заказа</text>
+
+<rect x="420" y="300" width="220" height="120" class="block"></rect>
+<text x="530" y="350" text-anchor="middle" class="label">A22</text>
+<text x="530" y="380" text-anchor="middle" class="small">Поиск исполнителя</text>
+
+<rect x="720" y="300" width="220" height="120" class="block"></rect>
+<text x="830" y="350" text-anchor="middle" class="label">A23</text>
+<text x="830" y="380" text-anchor="middle" class="small">Подтверждение сделки</text>
+
+<rect x="1020" y="300" width="220" height="120" class="block"></rect>
+<text x="1130" y="350" text-anchor="middle" class="label">A24</text>
+<text x="1130" y="380" text-anchor="middle" class="small">Завершение заказа</text>
+
+<rect x="1320" y="300" width="220" height="120" class="block"></rect>
+<text x="1430" y="350" text-anchor="middle" class="label">A25</text>
+<text x="1430" y="380" text-anchor="middle" class="small">Оценка исполнителя</text>
+
+<line x1="340" y1="360" x2="420" y2="360" class="arrow"></line>
+<line x1="640" y1="360" x2="720" y2="360" class="arrow"></line>
+<line x1="940" y1="360" x2="1020" y2="360" class="arrow"></line>
+<line x1="1240" y1="360" x2="1320" y2="360" class="arrow"></line>
+
+<text x="355" y="340" class="small">Активный заказ</text>
+<text x="655" y="340" class="small">Исполнитель</text>
+<text x="960" y="340" class="small">Подтверждение</text>
+<text x="1260" y="340" class="small">Выполненный заказ</text>
+
+<line x1="800" y1="100" x2="800" y2="300" class="arrow"></line>
+<text x="650" y="70" class="small">Алгоритмы поиска и SLA</text>
+
+<line x1="830" y1="760" x2="830" y2="420" class="arrow"></line>
+<text x="650" y="790" class="small">Search Engine / Recommendation System / Database</text>
+
+<line x1="20" y1="340" x2="120" y2="340" class="arrow"></line>
+<text x="20" y="320" class="small">Описание заказа</text>
+
+<line x1="1540" y1="360" x2="1660" y2="360" class="arrow"></line>
+<text x="1570" y="330" class="small">Рейтинг и отзыв</text>
+
+</svg>
+</div>
+
+<div class="diagram">
+<h2>Декомпозиция A5 — Платёжная система</h2>
+
+<svg viewBox="0 0 1600 850">
+
+<rect x="120" y="320" width="240" height="120" class="block"></rect>
+<text x="240" y="370" text-anchor="middle" class="label">A51</text>
+<text x="240" y="400" text-anchor="middle" class="small">Создание платежа</text>
+
+<rect x="450" y="320" width="240" height="120" class="block"></rect>
+<text x="570" y="370" text-anchor="middle" class="label">A52</text>
+<text x="570" y="400" text-anchor="middle" class="small">Проверка транзакции</text>
+
+<rect x="780" y="320" width="240" height="120" class="block"></rect>
+<text x="900" y="370" text-anchor="middle" class="label">A53</text>
+<text x="900" y="400" text-anchor="middle" class="small">Безопасная сделка</text>
+
+<rect x="1110" y="320" width="240" height="120" class="block"></rect>
+<text x="1230" y="370" text-anchor="middle" class="label">A54</text>
+<text x="1230" y="400" text-anchor="middle" class="small">Возврат средств</text>
+
+<line x1="360" y1="380" x2="450" y2="380" class="arrow"></line>
+<line x1="690" y1="380" x2="780" y2="380" class="arrow"></line>
+<line x1="1020" y1="380" x2="1110" y2="380" class="arrow"></line>
+
+<text x="375" y="360" class="small">Платёжный запрос</text>
+<text x="710" y="360" class="small">Подтверждение банка</text>
+<text x="1040" y="360" class="small">Спор / отмена</text>
+
+<line x1="850" y1="120" x2="850" y2="320" class="arrow"></line>
+<text x="700" y="90" class="small">PCI DSS / Банковские правила</text>
+
+<line x1="830" y1="760" x2="830" y2="440" class="arrow"></line>
+<text x="650" y="790" class="small">Payment Gateway / Escrow / Fraud Detection</text>
+
+<line x1="20" y1="360" x2="120" y2="360" class="arrow"></line>
+<text x="20" y="330" class="small">Данные карты</text>
+
+<line x1="1350" y1="380" x2="1500" y2="380" class="arrow"></line>
+<text x="1370" y="350" class="small">Финансовый результат</text>
+
+</svg>
+</div>
+
+</body>
+</html>
